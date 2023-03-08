@@ -1,0 +1,41 @@
+<!DOCTYPE html >
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta charset="UTF-8">
+		<title>OpenSAP - Developing Web Apps with SAPUI5</title>
+		<script
+			id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-preload="async"
+			data-sap-ui-resourceroots='{"opensap.myapp" : "./"}'>
+		</script>
+		
+		<script>
+			sap.ui.getCore().attachInit(function () {
+				new sap.ui.core.ComponentContainer({
+					name : "opensap.myapp"
+				}).placeAt("content");
+
+				/* imagen como objeto
+				var oImage = new sap.m.Image({
+					src: "https://cdn.britannica.com/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg?w=600&q=60"
+				}).placeAt("content");
+				oImage.setHeight("400px");
+				
+				Imagen desde la vista
+				sap.ui.xmlview({
+					viewName: "opensap.myapp.view.App"
+				}).placeAt("content");
+				*/
+			});
+		</script>
+
+	</head>
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>

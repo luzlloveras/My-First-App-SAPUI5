@@ -1,0 +1,73 @@
+<mvc:View
+	displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns="sap.m"
+	controllerName="opensap.myapp.controller.App">
+	<App>
+		<pages>
+			<Page title="Adopta un gatito">
+				<content>
+					<IconTabBar	id="idTopLevelIconTabBar" class="sapUiResponsiveContentPadding">
+						<items>
+							<IconTabFilter id="start" text="{i18n>gettingStartedFilter}">
+								<Carousel>
+									<pages>
+										<Image src="https://cdn.britannica.com/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg" height="400px"/>
+										<Image src="http://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg" height="400px"/>
+										<Image src="https://wpcdn.us-east-1.vip.tn-cloud.net/www.wnky.com/content/uploads/2022/12/l/z/photo-resize-2022-12-22t143139621-1024x576.jpg" height="400px"/>
+									</pages>
+								</Carousel>
+								<Button text="{i18n>showHelloButtonText}" press="onShowHello"/>
+								<Input 	value="{helloPanel>/recipient/name}" description="Hello {helloPanel>/recipient/name}" valueLiveUpdate="true" width="60%"/>
+							</IconTabFilter>
+							<IconTabFilter id="layouts" text="{i18n>gettingForm}">
+								<MessageStrip
+									type="Information"
+									showIcon="true"
+									text="Her e's a Form Layout inside an Icon Tab Bar …"/>
+								<f:SimpleForm id="simpleFormChange"
+									title="Address"
+									editable="true"
+									class="editableForm sapUiSmallMarginTopBottom">
+									<f:content>
+										<Label text="{i18n>Nombre}"/>
+											<Input value="{address>/Nombre}"/>
+										<Label text="{i18n>Calle}"/>
+											<Input value="{address>/Calle}"/>
+										<Label text="{i18n>Numero}"/>
+											<Input value="{address>/Numero}"/>
+										<Label text="{i18n>CodigoPostal}"/>
+											<Input value="{address>/CodigoPostal}"/>
+										<Label text="{i18n>Zona}"/>
+											<Select>
+												<items>
+													<core:Item text="{i18n>Capital Federal}"/>
+													<core:Item text="{i18n>Gran Buenos Aires}"/>
+													<core:Item text="{i18n>Interior del país}"/>
+												</items>
+											</Select>
+										<Label text="{i18n>Ciudad}"/>
+											<Input value="{address>/Ciudad}" />
+									</f:content>
+								</f:SimpleForm>
+								<Toolbar>
+									<ToolbarSpacer/>
+									<Button
+										text="{i18n>Publish}"
+										icon="sap-icon://outbox"
+										type="Accept"/>
+									<Button
+										text="{i18n>Save}"
+										icon="sap-icon://save"/>
+								</Toolbar>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
